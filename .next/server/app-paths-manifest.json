@@ -1,6 +1,12 @@
 {
+  "/api/contact/route": "app/api/contact/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/page": "app/page.js",
-  "/work/page": "app/work/page.js",
+  "/contact/page": "app/contact/page.js",
   "/work/[slug]/page": "app/work/[slug]/page.js",
-  "/about/page": "app/about/page.js"
+  "/about/page": "app/about/page.js",
+  "/services/page": "app/services/page.js",
+  "/work/page": "app/work/page.js"
 }
