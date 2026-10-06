@@ -1,0 +1,36 @@
+export const siteConfig = {
+  name: "OmniTech",
+  legalName: "OmniTech Digital Solutions",
+  tagline: "THINK IT. BUILD IT.",
+  subTagline: "Turning ideas into digital solutions.",
+  description:
+    "We build modern websites, high-performance web applications, and custom software solutions that help businesses establish their presence, improve processes, and scale.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://omnitech.dev",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@omnitech.dev",
+  phone: process.env.NEXT_PUBLIC_CONTACT_PHONE || "+27 (0) 10 500 8492",
+  location: "Johannesburg & Cape Town, South Africa",
+  workingHours: "Mon - Fri: 08:30 - 17:30 (SAST)",
+  social: {
+    github: "https://github.com/omnitech-digital",
+    linkedin: "https://linkedin.com/company/omnitech-digital",
+    twitter: "https://twitter.com/omnitech_dev",
+  },
+  meta: {
+    titleTemplate: "%s | OmniTech — Think it. Build it.",
+    defaultTitle: "OmniTech | Web Development, Web Apps & Custom Software Solutions",
+    keywords: [
+      "web development",
+      "website development",
+      "web applications",
+      "custom software",
+      "software development",
+      "responsive websites",
+      "business websites",
+      "Next.js development",
+      "React developers",
+      "South Africa",
+      "Johannesburg software agency",
+      "Cape Town web studio",
+    ],
+  },
+};
