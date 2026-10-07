@@ -34,13 +34,18 @@ export default function AdminDashboardPage() {
 
   const sortedFlights = useMemo(() => {
     return [...flights].sort((a, b) => {
-      let valA = a[sortField];
-      let valB = b[sortField];
-      
-      // Handle nested or complex types if necessary
+      let valA: string | number;
+      let valB: string | number;
+
       if (sortField === 'price') {
         valA = a.price.economy;
         valB = b.price.economy;
+      } else if (sortField === 'seatsAvailable') {
+        valA = a.seatsAvailable.economy + a.seatsAvailable.business;
+        valB = b.seatsAvailable.economy + b.seatsAvailable.business;
+      } else {
+        valA = String(a[sortField]);
+        valB = String(b[sortField]);
       }
 
       if (valA < valB) return sortDirection === 'asc' ? -1 : 1;
