@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/demo/layout,_N_T_/demo/airline-reservation-system/layout,_N_T_/demo/airline-reservation-system/admin/layout,_N_T_/demo/airline-reservation-system/admin/page,_N_T_/demo/airline-reservation-system/admin"
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/d0f269094787267f7a229a6e3441e4f0a94ca555d76e898152895c3821268d36/$/demo/airline-reservation-system/admin",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/demo/airline-reservation-system/admin/page"
+    },
+    "isFallback": false
+  }
+}

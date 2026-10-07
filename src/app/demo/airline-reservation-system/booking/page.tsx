@@ -36,7 +36,7 @@ function BookingFlow() {
         const cfg = getAircraftConfig(f.aircraft);
         if (cfg) {
           setConfig(cfg);
-          setSeats(generateSeats(cfg, f.seatsAvailable));
+          setSeats(generateSeats(f.aircraft));
         }
       }
     }

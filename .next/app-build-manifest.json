@@ -116,14 +116,14 @@
       "static/chunks/909-e271dda06853dd76.js",
       "static/chunks/app/demo/airline-reservation-system/layout-783f238e2e83127c.js"
     ],
-    "/demo/airline-reservation-system/booking/page": [
+    "/demo/airline-reservation-system/confirmation/page": [
       "static/chunks/webpack-a2a7106df7a920d1.js",
       "static/chunks/4bd1b696-c023c6e3521b1417.js",
       "static/chunks/255-ce8c7c75002f810b.js",
       "static/chunks/main-app-bd5ef817ef421868.js",
       "static/chunks/619-ba102abea3e3d0e4.js",
       "static/chunks/909-e271dda06853dd76.js",
-      "static/chunks/app/demo/airline-reservation-system/booking/page-6037ab56cb7b1cc3.js"
+      "static/chunks/app/demo/airline-reservation-system/confirmation/page-90af5be20a306adb.js"
     ],
     "/demo/airline-reservation-system/admin/page": [
       "static/chunks/webpack-a2a7106df7a920d1.js",
@@ -133,15 +133,6 @@
       "static/chunks/619-ba102abea3e3d0e4.js",
       "static/chunks/909-e271dda06853dd76.js",
       "static/chunks/app/demo/airline-reservation-system/admin/page-545ccf0ccda5807b.js"
-    ],
-    "/demo/airline-reservation-system/confirmation/page": [
-      "static/chunks/webpack-a2a7106df7a920d1.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-ce8c7c75002f810b.js",
-      "static/chunks/main-app-bd5ef817ef421868.js",
-      "static/chunks/619-ba102abea3e3d0e4.js",
-      "static/chunks/909-e271dda06853dd76.js",
-      "static/chunks/app/demo/airline-reservation-system/confirmation/page-90af5be20a306adb.js"
     ],
     "/demo/airline-reservation-system/flights/page": [
       "static/chunks/webpack-a2a7106df7a920d1.js",
@@ -161,6 +152,15 @@
       "static/chunks/909-e271dda06853dd76.js",
       "static/chunks/120-00e66bd757fe7753.js",
       "static/chunks/app/demo/airline-reservation-system/page-eee51a4a282786e5.js"
+    ],
+    "/demo/airline-reservation-system/booking/page": [
+      "static/chunks/webpack-a2a7106df7a920d1.js",
+      "static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "static/chunks/255-ce8c7c75002f810b.js",
+      "static/chunks/main-app-bd5ef817ef421868.js",
+      "static/chunks/619-ba102abea3e3d0e4.js",
+      "static/chunks/909-e271dda06853dd76.js",
+      "static/chunks/app/demo/airline-reservation-system/booking/page-302db7e77c639633.js"
     ]
   }
 }
