@@ -4,14 +4,14 @@
   "/robots.txt/route": "/robots.txt",
   "/sitemap.xml/route": "/sitemap.xml",
   "/page": "/",
-  "/about/page": "/about",
   "/contact/page": "/contact",
+  "/about/page": "/about",
   "/services/page": "/services",
   "/work/page": "/work",
   "/work/[slug]/page": "/work/[slug]",
-  "/demo/airline-reservation-system/confirmation/page": "/demo/airline-reservation-system/confirmation",
   "/demo/airline-reservation-system/admin/page": "/demo/airline-reservation-system/admin",
+  "/demo/airline-reservation-system/booking/page": "/demo/airline-reservation-system/booking",
+  "/demo/airline-reservation-system/confirmation/page": "/demo/airline-reservation-system/confirmation",
   "/demo/airline-reservation-system/flights/page": "/demo/airline-reservation-system/flights",
-  "/demo/airline-reservation-system/page": "/demo/airline-reservation-system",
-  "/demo/airline-reservation-system/booking/page": "/demo/airline-reservation-system/booking"
+  "/demo/airline-reservation-system/page": "/demo/airline-reservation-system"
 }

@@ -4,14 +4,14 @@
   "/robots.txt/route": "app/robots.txt/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
   "/page": "app/page.js",
-  "/about/page": "app/about/page.js",
   "/contact/page": "app/contact/page.js",
+  "/about/page": "app/about/page.js",
   "/services/page": "app/services/page.js",
   "/work/page": "app/work/page.js",
   "/work/[slug]/page": "app/work/[slug]/page.js",
-  "/demo/airline-reservation-system/confirmation/page": "app/demo/airline-reservation-system/confirmation/page.js",
   "/demo/airline-reservation-system/admin/page": "app/demo/airline-reservation-system/admin/page.js",
+  "/demo/airline-reservation-system/booking/page": "app/demo/airline-reservation-system/booking/page.js",
+  "/demo/airline-reservation-system/confirmation/page": "app/demo/airline-reservation-system/confirmation/page.js",
   "/demo/airline-reservation-system/flights/page": "app/demo/airline-reservation-system/flights/page.js",
-  "/demo/airline-reservation-system/page": "app/demo/airline-reservation-system/page.js",
-  "/demo/airline-reservation-system/booking/page": "app/demo/airline-reservation-system/booking/page.js"
+  "/demo/airline-reservation-system/page": "app/demo/airline-reservation-system/page.js"
 }

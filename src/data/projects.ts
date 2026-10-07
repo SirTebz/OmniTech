@@ -40,7 +40,7 @@ export const projectsData: ProjectItem[] = [
       "Admin Fleet & Schedule Management Dashboard",
     ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL", "Prisma", "Stripe API"],
-    liveUrl: "https://aeroreserve-demo.omnitech.dev",
+    liveUrl: "/demo/airline-reservation-system",
     githubUrl: "https://github.com/omnitech-digital/aero-reserve-platform",
     featured: true,
     year: "2025",
