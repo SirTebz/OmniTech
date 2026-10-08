@@ -127,7 +127,7 @@ export const projectsData: ProjectItem[] = [
     problem:
       "Freelancers and small businesses frequently struggle with bloated, costly accounting software with sluggish interfaces, complicated setup, lack of localized South African payment gateways, and fragmented payment tracking.",
     solution:
-      "Engineered an ultra-fast, zero-dependency invoicing platform featuring a document-style live recalculating editor, client-side vector PDF generation, automated recurring billing schedules, and direct PayFast ITN webhook payment reconciliation.",
+      "Engineered an ultra-fast, zero-npm-dependency platform using Node.js built-in core modules (http, crypto, net, tls), native SQLite via node:sqlite, and responsive vanilla JavaScript (SPA with print layout). Features a live document-style invoice recalculator, custom vector PDF engine, recurring billing automations, and direct PayFast ITN webhook verification.",
     keyFeatures: [
       "Document-Style Live Invoice Editor with Tax, Discounts & Due-Date Presets",
       "Client Public Payment Portal (/invoice/<token>) with PayFast (Card / Instant EFT)",
@@ -138,7 +138,15 @@ export const projectsData: ProjectItem[] = [
       "Customer Directory with Inline Quick-Creation inside Invoice Editor",
       "Business Branding with Logo Upload Preview & 3 Styles (Clean, Professional, Minimal)",
     ],
-    technologies: ["Python / Flask", "PostgreSQL", "PayFast API", "Vector PDF Engine", "Tailwind CSS", "TypeScript", "Docker"],
+    technologies: [
+      "Node.js (Built-in Core)",
+      "Vanilla JavaScript (SPA)",
+      "HTML5 & CSS3",
+      "SQLite (node:sqlite)",
+      "PayFast API & ITN",
+      "Zero-Dependency Architecture",
+      "Vector PDF Engine",
+    ],
     liveUrl: "https://quiktab.onrender.com/",
     githubUrl: "https://github.com/omnitech-digital/quiktab-invoicing",
     featured: true,
