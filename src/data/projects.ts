@@ -72,7 +72,7 @@ export const projectsData: ProjectItem[] = [
       "CSV & OFX Financial Statement Importer with Duplicate Detection",
     ],
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Recharts", "PostgreSQL", "Zod"],
-    liveUrl: "https://apexwealth-demo.omnitech.dev",
+    liveUrl: "/demo/personal-finance-tracker",
     githubUrl: "https://github.com/omnitech-digital/apex-wealth-analytics",
     featured: true,
     year: "2025",
