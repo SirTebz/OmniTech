@@ -27,7 +27,7 @@
       "static/chunks/4bd1b696-f785427dddbba9fb.js",
       "static/chunks/1255-5cd2fe06309409a0.js",
       "static/chunks/main-app-684882b2075e3b15.js",
-      "static/css/d5c5eef4f36d01ff.css",
+      "static/css/3f2f7d357e276cab.css",
       "static/chunks/4909-fc906de4d4e01d80.js",
       "static/chunks/2619-3c9e02e22d10480a.js",
       "static/chunks/6667-e8e72d84226b831b.js",
@@ -116,23 +116,14 @@
       "static/chunks/2619-3c9e02e22d10480a.js",
       "static/chunks/app/demo/airline-reservation-system/layout-13c73f9ec50be3de.js"
     ],
-    "/demo/airline-reservation-system/admin/page": [
+    "/demo/airline-reservation-system/flights/page": [
       "static/chunks/webpack-97037a3b572eae0b.js",
       "static/chunks/4bd1b696-f785427dddbba9fb.js",
       "static/chunks/1255-5cd2fe06309409a0.js",
       "static/chunks/main-app-684882b2075e3b15.js",
       "static/chunks/4909-fc906de4d4e01d80.js",
       "static/chunks/2619-3c9e02e22d10480a.js",
-      "static/chunks/app/demo/airline-reservation-system/admin/page-c2b65ed3a800c70c.js"
-    ],
-    "/demo/airline-reservation-system/booking/page": [
-      "static/chunks/webpack-97037a3b572eae0b.js",
-      "static/chunks/4bd1b696-f785427dddbba9fb.js",
-      "static/chunks/1255-5cd2fe06309409a0.js",
-      "static/chunks/main-app-684882b2075e3b15.js",
-      "static/chunks/4909-fc906de4d4e01d80.js",
-      "static/chunks/2619-3c9e02e22d10480a.js",
-      "static/chunks/app/demo/airline-reservation-system/booking/page-89bac2d68a87ea6c.js"
+      "static/chunks/app/demo/airline-reservation-system/flights/page-1ed8a9b48c498301.js"
     ],
     "/demo/airline-reservation-system/confirmation/page": [
       "static/chunks/webpack-97037a3b572eae0b.js",
@@ -142,6 +133,15 @@
       "static/chunks/4909-fc906de4d4e01d80.js",
       "static/chunks/2619-3c9e02e22d10480a.js",
       "static/chunks/app/demo/airline-reservation-system/confirmation/page-9d09a227b29a7011.js"
+    ],
+    "/demo/airline-reservation-system/booking/page": [
+      "static/chunks/webpack-97037a3b572eae0b.js",
+      "static/chunks/4bd1b696-f785427dddbba9fb.js",
+      "static/chunks/1255-5cd2fe06309409a0.js",
+      "static/chunks/main-app-684882b2075e3b15.js",
+      "static/chunks/4909-fc906de4d4e01d80.js",
+      "static/chunks/2619-3c9e02e22d10480a.js",
+      "static/chunks/app/demo/airline-reservation-system/booking/page-89bac2d68a87ea6c.js"
     ],
     "/demo/airline-reservation-system/page": [
       "static/chunks/webpack-97037a3b572eae0b.js",
@@ -153,14 +153,14 @@
       "static/chunks/5120-3483615e2790deff.js",
       "static/chunks/app/demo/airline-reservation-system/page-3b881db00459f889.js"
     ],
-    "/demo/airline-reservation-system/flights/page": [
+    "/demo/airline-reservation-system/admin/page": [
       "static/chunks/webpack-97037a3b572eae0b.js",
       "static/chunks/4bd1b696-f785427dddbba9fb.js",
       "static/chunks/1255-5cd2fe06309409a0.js",
       "static/chunks/main-app-684882b2075e3b15.js",
       "static/chunks/4909-fc906de4d4e01d80.js",
       "static/chunks/2619-3c9e02e22d10480a.js",
-      "static/chunks/app/demo/airline-reservation-system/flights/page-1ed8a9b48c498301.js"
+      "static/chunks/app/demo/airline-reservation-system/admin/page-c2b65ed3a800c70c.js"
     ],
     "/demo/community-dashboard/layout": [
       "static/chunks/webpack-97037a3b572eae0b.js",
@@ -172,23 +172,15 @@
       "static/chunks/5155-804d82bdf4808d31.js",
       "static/chunks/app/demo/community-dashboard/layout-f62f6c00addea0a0.js"
     ],
-    "/demo/community-dashboard/audit/page": [
-      "static/chunks/webpack-97037a3b572eae0b.js",
-      "static/chunks/4bd1b696-f785427dddbba9fb.js",
-      "static/chunks/1255-5cd2fe06309409a0.js",
-      "static/chunks/main-app-684882b2075e3b15.js",
-      "static/chunks/4909-fc906de4d4e01d80.js",
-      "static/chunks/1004-1d7684dd90f6fb91.js",
-      "static/chunks/app/demo/community-dashboard/audit/page-fc731ce2b9d14e7d.js"
-    ],
     "/demo/community-dashboard/events/page": [
       "static/chunks/webpack-97037a3b572eae0b.js",
       "static/chunks/4bd1b696-f785427dddbba9fb.js",
       "static/chunks/1255-5cd2fe06309409a0.js",
       "static/chunks/main-app-684882b2075e3b15.js",
       "static/chunks/4909-fc906de4d4e01d80.js",
-      "static/chunks/1004-1d7684dd90f6fb91.js",
-      "static/chunks/app/demo/community-dashboard/events/page-497f48e6b1a4e11e.js"
+      "static/chunks/1950-461a8fa3c215449b.js",
+      "static/chunks/5312-d136b6b638208003.js",
+      "static/chunks/app/demo/community-dashboard/events/page-dace9bf64b094966.js"
     ],
     "/demo/community-dashboard/members/page": [
       "static/chunks/webpack-97037a3b572eae0b.js",
@@ -196,8 +188,8 @@
       "static/chunks/1255-5cd2fe06309409a0.js",
       "static/chunks/main-app-684882b2075e3b15.js",
       "static/chunks/4909-fc906de4d4e01d80.js",
-      "static/chunks/1004-1d7684dd90f6fb91.js",
-      "static/chunks/app/demo/community-dashboard/members/page-04f1c4dade90492b.js"
+      "static/chunks/5312-d136b6b638208003.js",
+      "static/chunks/app/demo/community-dashboard/members/page-9b0c87039b02424a.js"
     ],
     "/demo/community-dashboard/page": [
       "static/chunks/webpack-97037a3b572eae0b.js",
@@ -206,9 +198,19 @@
       "static/chunks/main-app-684882b2075e3b15.js",
       "static/chunks/4909-fc906de4d4e01d80.js",
       "static/chunks/2619-3c9e02e22d10480a.js",
-      "static/chunks/1004-1d7684dd90f6fb91.js",
-      "static/chunks/9146-d326e2f409f5190d.js",
-      "static/chunks/app/demo/community-dashboard/page-0de04d55981264b8.js"
+      "static/chunks/6094-135ea914939e4f42.js",
+      "static/chunks/5312-d136b6b638208003.js",
+      "static/chunks/app/demo/community-dashboard/page-4e99a8564ba96d96.js"
+    ],
+    "/demo/community-dashboard/audit/page": [
+      "static/chunks/webpack-97037a3b572eae0b.js",
+      "static/chunks/4bd1b696-f785427dddbba9fb.js",
+      "static/chunks/1255-5cd2fe06309409a0.js",
+      "static/chunks/main-app-684882b2075e3b15.js",
+      "static/chunks/4909-fc906de4d4e01d80.js",
+      "static/chunks/9676-ded7f2ebc2cd31a3.js",
+      "static/chunks/5312-d136b6b638208003.js",
+      "static/chunks/app/demo/community-dashboard/audit/page-1e75794f0e7fff23.js"
     ],
     "/demo/community-dashboard/playground/page": [
       "static/chunks/webpack-97037a3b572eae0b.js",
@@ -216,8 +218,8 @@
       "static/chunks/1255-5cd2fe06309409a0.js",
       "static/chunks/main-app-684882b2075e3b15.js",
       "static/chunks/4909-fc906de4d4e01d80.js",
-      "static/chunks/4740-68c0a8b68652f215.js",
-      "static/chunks/app/demo/community-dashboard/playground/page-dda27b04ef1e6ef2.js"
+      "static/chunks/6094-135ea914939e4f42.js",
+      "static/chunks/app/demo/community-dashboard/playground/page-f1cacb85fdfa27d7.js"
     ],
     "/demo/personal-finance-tracker/layout": [
       "static/chunks/webpack-97037a3b572eae0b.js",
