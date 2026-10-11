@@ -65,6 +65,51 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../src/app/demo/airline-reservation-system/admin/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/demo/airline-reservation-system/admin">> = Specific
+  const handler = {} as typeof import("../../src/app/demo/airline-reservation-system/admin/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/demo/airline-reservation-system/booking/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/demo/airline-reservation-system/booking">> = Specific
+  const handler = {} as typeof import("../../src/app/demo/airline-reservation-system/booking/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/demo/airline-reservation-system/confirmation/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/demo/airline-reservation-system/confirmation">> = Specific
+  const handler = {} as typeof import("../../src/app/demo/airline-reservation-system/confirmation/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/demo/airline-reservation-system/flights/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/demo/airline-reservation-system/flights">> = Specific
+  const handler = {} as typeof import("../../src/app/demo/airline-reservation-system/flights/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../src/app/demo/airline-reservation-system/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/demo/airline-reservation-system">> = Specific
+  const handler = {} as typeof import("../../src/app/demo/airline-reservation-system/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../src/app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific
@@ -113,6 +158,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 
 
 
+
+// Validate ../../src/app/demo/airline-reservation-system/layout.tsx
+{
+  type __IsExpected<Specific extends LayoutConfig<"/demo/airline-reservation-system">> = Specific
+  const handler = {} as typeof import("../../src/app/demo/airline-reservation-system/layout.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
 
 // Validate ../../src/app/layout.tsx
 {

@@ -54,6 +54,36 @@
       "namedRegex": "^/contact(?:/)?$"
     },
     {
+      "page": "/demo/airline-reservation-system",
+      "regex": "^/demo/airline\\-reservation\\-system(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/airline\\-reservation\\-system(?:/)?$"
+    },
+    {
+      "page": "/demo/airline-reservation-system/admin",
+      "regex": "^/demo/airline\\-reservation\\-system/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/airline\\-reservation\\-system/admin(?:/)?$"
+    },
+    {
+      "page": "/demo/airline-reservation-system/booking",
+      "regex": "^/demo/airline\\-reservation\\-system/booking(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/airline\\-reservation\\-system/booking(?:/)?$"
+    },
+    {
+      "page": "/demo/airline-reservation-system/confirmation",
+      "regex": "^/demo/airline\\-reservation\\-system/confirmation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/airline\\-reservation\\-system/confirmation(?:/)?$"
+    },
+    {
+      "page": "/demo/airline-reservation-system/flights",
+      "regex": "^/demo/airline\\-reservation\\-system/flights(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/airline\\-reservation\\-system/flights(?:/)?$"
+    },
+    {
       "page": "/robots.txt",
       "regex": "^/robots\\.txt(?:/)?$",
       "routeKeys": {},

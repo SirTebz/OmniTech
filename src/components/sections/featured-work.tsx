@@ -92,15 +92,25 @@ export function FeaturedWork() {
                         <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
                       </Button>
                       {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                          <ExternalLink className="w-3.5 h-3.5" />
-                          <span>Demo</span>
-                        </a>
+                        project.liveUrl.startsWith("http") ? (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors"
+                          >
+                            <ExternalLink className="w-3.5 h-3.5" />
+                            <span>Demo</span>
+                          </a>
+                        ) : (
+                          <Link
+                            href={project.liveUrl}
+                            className="inline-flex items-center gap-1 text-xs font-mono text-sky-500 font-semibold hover:text-sky-400 transition-colors"
+                          >
+                            <ExternalLink className="w-3.5 h-3.5" />
+                            <span>Live Demo</span>
+                          </Link>
+                        )
                       )}
                       {project.githubUrl && (
                         <a

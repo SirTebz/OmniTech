@@ -97,9 +97,17 @@ export default async function ProjectDetailPage({ params }: Props) {
             {/* Action buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
               {project.liveUrl && (
-                <Button href={project.liveUrl} isExternal size="md">
-                  <span>Visit Live Demo</span>
-                  <ExternalLink className="w-4 h-4 ml-2" />
+                <Button
+                  href={project.liveUrl}
+                  isExternal={project.liveUrl.startsWith("http")}
+                  size="md"
+                >
+                  <span>Launch Live Demo</span>
+                  {project.liveUrl.startsWith("http") ? (
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  ) : (
+                    <Layers className="w-4 h-4 ml-2" />
+                  )}
                 </Button>
               )}
               {project.githubUrl && (

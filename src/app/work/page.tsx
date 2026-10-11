@@ -121,15 +121,25 @@ export default function WorkPage() {
 
                   <div className="flex items-center gap-3">
                     {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-foreground transition-colors"
-                        aria-label="Live Demo"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
+                      project.liveUrl.startsWith("http") ? (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-foreground transition-colors"
+                          aria-label="Live Demo"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      ) : (
+                        <Link
+                          href={project.liveUrl}
+                          className="text-sky-500 hover:text-sky-400 transition-colors"
+                          aria-label="Live Demo"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </Link>
+                      )
                     )}
                     {project.githubUrl && (
                       <a
