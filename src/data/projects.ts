@@ -104,7 +104,7 @@ export const projectsData: ProjectItem[] = [
       "Dark / Light UI Theme with Instant Hotkey Navigation",
     ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "WebSockets", "Redis", "PostgreSQL"],
-    liveUrl: "https://nexushub-demo.omnitech.dev",
+    liveUrl: "/demo/community-dashboard",
     githubUrl: "https://github.com/omnitech-digital/nexus-hub-community",
     featured: true,
     year: "2024",
