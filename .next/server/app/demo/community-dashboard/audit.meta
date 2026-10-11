@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/demo/layout,_N_T_/demo/community-dashboard/layout,_N_T_/demo/community-dashboard/audit/layout,_N_T_/demo/community-dashboard/audit/page,_N_T_/demo/community-dashboard/audit"
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/ab7e32324df06e1db385154eb2938bae78a606e2c41926931b64c7695cdfbdbd/$/demo/community-dashboard/audit",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/demo/community-dashboard/audit/page"
+    },
+    "isFallback": false
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/demo/layout,_N_T_/demo/community-dashboard/layout,_N_T_/demo/community-dashboard/events/layout,_N_T_/demo/community-dashboard/events/page,_N_T_/demo/community-dashboard/events"
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/65f5367625c3ab13c59094fb8bea1b9d3337bac1ff127be58cda61ef5558cc64/$/demo/community-dashboard/events",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/demo/community-dashboard/events/page"
+    },
+    "isFallback": false
+  }
+}

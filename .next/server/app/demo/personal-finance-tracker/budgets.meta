@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/demo/layout,_N_T_/demo/personal-finance-tracker/layout,_N_T_/demo/personal-finance-tracker/budgets/layout,_N_T_/demo/personal-finance-tracker/budgets/page,_N_T_/demo/personal-finance-tracker/budgets"
+  },
+  "routeCache": {
+    "key": "/route-cache/APP_PAGE/50ddb579b50921492e2e9a555de22d25f052ff120e60418f9543e9cc0e14465b/$/demo/personal-finance-tracker/budgets",
+    "owner": {
+      "kind": "APP_PAGE",
+      "sourceRoute": "/demo/personal-finance-tracker/budgets/page"
+    },
+    "isFallback": false
+  }
+}

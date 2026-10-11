@@ -84,6 +84,66 @@
       "namedRegex": "^/demo/airline\\-reservation\\-system/flights(?:/)?$"
     },
     {
+      "page": "/demo/community-dashboard",
+      "regex": "^/demo/community\\-dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/community\\-dashboard(?:/)?$"
+    },
+    {
+      "page": "/demo/community-dashboard/audit",
+      "regex": "^/demo/community\\-dashboard/audit(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/community\\-dashboard/audit(?:/)?$"
+    },
+    {
+      "page": "/demo/community-dashboard/events",
+      "regex": "^/demo/community\\-dashboard/events(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/community\\-dashboard/events(?:/)?$"
+    },
+    {
+      "page": "/demo/community-dashboard/members",
+      "regex": "^/demo/community\\-dashboard/members(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/community\\-dashboard/members(?:/)?$"
+    },
+    {
+      "page": "/demo/community-dashboard/playground",
+      "regex": "^/demo/community\\-dashboard/playground(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/community\\-dashboard/playground(?:/)?$"
+    },
+    {
+      "page": "/demo/personal-finance-tracker",
+      "regex": "^/demo/personal\\-finance\\-tracker(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/personal\\-finance\\-tracker(?:/)?$"
+    },
+    {
+      "page": "/demo/personal-finance-tracker/accounts",
+      "regex": "^/demo/personal\\-finance\\-tracker/accounts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/personal\\-finance\\-tracker/accounts(?:/)?$"
+    },
+    {
+      "page": "/demo/personal-finance-tracker/budgets",
+      "regex": "^/demo/personal\\-finance\\-tracker/budgets(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/personal\\-finance\\-tracker/budgets(?:/)?$"
+    },
+    {
+      "page": "/demo/personal-finance-tracker/import",
+      "regex": "^/demo/personal\\-finance\\-tracker/import(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/personal\\-finance\\-tracker/import(?:/)?$"
+    },
+    {
+      "page": "/demo/personal-finance-tracker/transactions",
+      "regex": "^/demo/personal\\-finance\\-tracker/transactions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/demo/personal\\-finance\\-tracker/transactions(?:/)?$"
+    },
+    {
       "page": "/robots.txt",
       "regex": "^/robots\\.txt(?:/)?$",
       "routeKeys": {},
