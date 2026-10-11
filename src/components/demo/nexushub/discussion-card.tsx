@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { UserAvatar } from "./user-avatar";
 import { DiscussionPost, DiscussionReply } from "@/data/demo/nexushub/types";
 import { formatRelativeTime, members } from "@/data/demo/nexushub/data";
 import { CodeBlock } from "./code-block";
@@ -68,15 +68,7 @@ export function DiscussionCard({ post }: DiscussionCardProps) {
       {/* Header: Author + Meta */}
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className="relative h-10 w-10 overflow-hidden rounded-full border border-border/80">
-            <Image
-              src={post.author.avatar}
-              alt={post.author.name}
-              fill
-              className="object-cover"
-              sizes="40px"
-            />
-          </div>
+          <UserAvatar name={post.author.name} size="lg" />
           <div>
             <div className="flex flex-wrap items-center gap-2">
               <span className="font-bold text-foreground text-sm leading-none">
@@ -203,15 +195,7 @@ export function DiscussionCard({ post }: DiscussionCardProps) {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="relative h-6 w-6 overflow-hidden rounded-full">
-                      <Image
-                        src={reply.author.avatar}
-                        alt={reply.author.name}
-                        fill
-                        className="object-cover"
-                        sizes="24px"
-                      />
-                    </div>
+                    <UserAvatar name={reply.author.name} size="sm" />
                     <span className="font-bold text-foreground">{reply.author.name}</span>
                     <span className="text-[10px] font-mono text-muted-foreground">
                       @{reply.author.handle}

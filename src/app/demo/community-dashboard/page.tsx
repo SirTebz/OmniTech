@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import { UserAvatar } from "@/components/demo/nexushub/user-avatar";
 import { Container } from "@/components/ui/container";
 import {
   channels,
@@ -114,15 +114,7 @@ export default function CommunityDashboardPage() {
               className="rounded-xl border border-dashed border-border bg-card/60 p-3.5 flex items-center justify-between gap-3 cursor-pointer hover:border-violet-500/50 hover:bg-violet-500/5 transition-all"
             >
               <div className="flex items-center gap-3">
-                <div className="relative h-7 w-7 rounded-full overflow-hidden border border-border">
-                  <Image
-                    src={members[0].avatar}
-                    alt={members[0].name}
-                    fill
-                    className="object-cover"
-                    sizes="28px"
-                  />
-                </div>
+                <UserAvatar name={members[0].name} size="md" />
                 <span className="text-xs text-muted-foreground font-medium">
                   Have an architecture question or snippet to review in #{activeChannel.name}?
                 </span>
@@ -187,15 +179,7 @@ export default function CommunityDashboardPage() {
                   {communityEvents[0].date} • {communityEvents[0].time}
                 </div>
                 <div className="flex items-center gap-2 pt-1 border-t border-border/60">
-                  <div className="relative h-5 w-5 rounded-full overflow-hidden">
-                    <Image
-                      src={communityEvents[0].speaker.avatar}
-                      alt={communityEvents[0].speaker.name}
-                      fill
-                      className="object-cover"
-                      sizes="20px"
-                    />
-                  </div>
+                  <UserAvatar name={communityEvents[0].speaker.name} size="xs" />
                   <span className="text-[11px] text-foreground font-medium">
                     {communityEvents[0].speaker.name}
                   </span>
@@ -221,15 +205,7 @@ export default function CommunityDashboardPage() {
                     className="flex items-center justify-between rounded-xl p-2 hover:bg-secondary/60 transition-colors"
                   >
                     <div className="flex items-center gap-2.5">
-                      <div className="relative h-8 w-8 rounded-full overflow-hidden border border-border">
-                        <Image
-                          src={mentor.avatar}
-                          alt={mentor.name}
-                          fill
-                          className="object-cover"
-                          sizes="32px"
-                        />
-                      </div>
+                      <UserAvatar name={mentor.name} size="md" />
                       <div>
                         <div className="text-xs font-bold text-foreground">
                           {mentor.name}

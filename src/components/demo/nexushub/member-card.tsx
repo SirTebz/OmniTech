@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { UserAvatar } from "./user-avatar";
 import { Member } from "@/data/demo/nexushub/types";
 import { MessageSquare, Award, CheckCircle, ExternalLink } from "lucide-react";
 
@@ -37,15 +37,7 @@ export function MemberCard({ member }: MemberCardProps) {
         {/* Avatar + Role Strip */}
         <div className="flex items-start justify-between gap-3">
           <div className="relative">
-            <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-border">
-              <Image
-                src={member.avatar}
-                alt={member.name}
-                fill
-                className="object-cover"
-                sizes="56px"
-              />
-            </div>
+            <UserAvatar name={member.name} size="xl" className="rounded-2xl" />
             {/* Status indicator dot */}
             <span
               className={`absolute -bottom-1 -right-1 h-3.5 w-3.5 rounded-full border-2 border-card ${

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { UserAvatar } from "./user-avatar";
 import { CommunityEvent } from "@/data/demo/nexushub/types";
 import { Calendar, Clock, Video, Download, Check, Users, Sparkles } from "lucide-react";
 
@@ -110,15 +110,7 @@ END:VCALENDAR`;
 
         {/* Speaker Profile */}
         <div className="flex items-center gap-3 pt-1">
-          <div className="relative h-9 w-9 rounded-full overflow-hidden border border-border">
-            <Image
-              src={event.speaker.avatar}
-              alt={event.speaker.name}
-              fill
-              className="object-cover"
-              sizes="36px"
-            />
-          </div>
+          <UserAvatar name={event.speaker.name} size="md" />
           <div>
             <div className="text-xs font-bold text-foreground">
               {event.speaker.name}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { UserAvatar } from "./user-avatar";
 import { AuditLogEntry, AuditLogStatus } from "@/data/demo/nexushub/types";
 import { ShieldCheck, ShieldAlert, CheckCircle2, Search, Filter } from "lucide-react";
 
@@ -100,15 +100,7 @@ export function AuditLogTable({ logs }: AuditLogTableProps) {
                 <td className="py-3 px-3 whitespace-nowrap">{statusBadge(log.status)}</td>
                 <td className="py-3 px-3 whitespace-nowrap">
                   <div className="flex items-center gap-2 font-sans font-medium text-foreground">
-                    <div className="relative h-6 w-6 rounded-full overflow-hidden border border-border">
-                      <Image
-                        src={log.actor.avatar}
-                        alt={log.actor.name}
-                        fill
-                        className="object-cover"
-                        sizes="24px"
-                      />
-                    </div>
+                    <UserAvatar name={log.actor.name} size="xs" />
                     <span>{log.actor.name}</span>
                   </div>
                 </td>
