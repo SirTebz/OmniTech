@@ -1,76 +1,85 @@
-# OmniTech — Production Web Development Agency
+# OmniTech — Technology Services & Interactive Project Demonstrations
 
-> **THINK IT. BUILD IT.**  
-> Turning ideas into digital solutions.
+> **Think It. Build It. Support It. Understand It.**  
+> Practical technology solutions across software development, IT support, application support, and data analytics.
 
-OmniTech is a modern, high-performance web development and custom software engineering studio website built with Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion, and shadcn/ui principles.
+- **Live Production Website**: [https://omni-tech-three.vercel.app/](https://omni-tech-three.vercel.app/)  
+- **GitHub Repository**: [https://github.com/SirTebz/OmniTech](https://github.com/SirTebz/OmniTech)  
+- **Direct Telephone**: [+27 72 238 9325](tel:+27722389325)  
+- **Direct Email**: [sirtebz.z@gmail.com](mailto:sirtebz.z@gmail.com)  
 
 ---
 
-## ⚡ Tech Stack
+## 1. Overview & Brand Repositioning
 
-- **Framework**: Next.js 15+ (App Router, Server Components)
-- **Language**: TypeScript (Strict Mode)
-- **Styling**: Tailwind CSS (Monochrome Design System)
-- **Animations**: Framer Motion
+OmniTech has been completely overhauled from a web-development-only studio into a comprehensive **technology services and professional engineering portfolio platform**. The platform communicates full capability across:
+1. **Software & Application Engineering**: Custom web apps, C# / .NET backend services, REST APIs, and database engineering.
+2. **IT Support & Helpdesk**: Workstation diagnostics, Windows troubleshooting, hardware diagnostics, network connectivity, and Microsoft 365.
+3. **Application Support & Systems Support**: Production error investigation, SQL transaction troubleshooting, root-cause analysis (RCA), and monitoring.
+4. **Data Analytics & Business Intelligence**: Data cleaning, SQL views, executive KPI cards, interactive dashboards, and reporting.
+5. **Website Development & Management**: Blazing fast Next.js platforms, Core Web Vitals optimisation, and continuous maintenance.
+6. **UI/UX Design & Technical Consulting**: Functional ergonomics, accessible design systems, and architecture reviews.
+
+---
+
+## 2. Interactive Demonstrations (Zero Registration Required)
+
+Visitors can test and interact with five functional web applications directly in the browser:
+
+| Demonstration | Service Area | Route | Key Functionality |
+| :--- | :--- | :--- | :--- |
+| **OmniDesk IT Service Desk** | IT Support & Helpdesk | `/demos/it-service-desk` | Interactive ticket triage, technician assignment, priority escalation, activity logging, and search/filters. |
+| **AppWatch Application Observability** | Application Support | `/demos/appwatch` | 8-system health monitor, error rates/latencies, live incident response, and simulated diagnostic probe. |
+| **InsightHub Sales Analytics** | Data Analytics & BI | `/demos/insighthub` | Multi-dimensional provincial filters (Gauteng, Western Cape, KZN), real-time revenue KPIs, and CSV export. |
+| **ITOps Insights IT Analytics** | IT Support / Analytics | `/demos/itops-insights` | ITIL service desk metrics, SLA compliance rate calculation, technician workload matrix, and incident trends. |
+| **FinTrack Personal Finance** | Data Analytics | `/demos/fintrack` | South African Rand (ZAR) cash flow ledger, monthly budget caps, transaction management, and statement export. |
+
+*All demos feature full client-side LocalStorage persistence and an instant **Reset Demo Data** action to restore the original seed datasets.*
+
+---
+
+## 3. Technology Stack
+
+- **Framework**: Next.js 15 (App Router, Server Components)
+- **Library**: React 19, React DOM 19
+- **Language**: TypeScript 5.8 (Strict Mode Enabled)
+- **Styling**: Tailwind CSS + PostCSS + CSS Variables
 - **Icons**: Lucide React
-- **Forms & Validation**: React Hook Form + Zod
-- **Theme**: `next-themes` (Light & Dark mode persistence)
-- **Deployment**: Optimized for Vercel Edge / Node runtime
+- **Forms & Validation**: React Hook Form + Zod + `@hookform/resolvers`
+- **Theming**: next-themes (System / Dark / Light with instant persistence)
+- **Testing**: Vitest 4.1, `@testing-library/react`, JSDOM
 
 ---
 
-## 🚀 Key Features
+## 4. Getting Started
 
-1. **Monochrome Aesthetic**: Black, white, and subtle gray visual identity inspired by modern tech studios.
-2. **Interactive Hero Visual**: Abstract IDE composition with animated line elements and live metric cards.
-3. **Comprehensive Case Studies**: Dedicated dynamic project showcase (`/work/[slug]`) with metrics, challenge/solution breakdowns, and tech specifications.
-4. **Services & Capabilities**: Detailed breakdown of Websites, Web Applications, Custom Software, Maintenance, UI/UX, and Consulting.
-5. **Interactive 5-Step Process**: Discover → Design → Build → Test → Launch & Improve.
-6. **Provider-Agnostic Contact Form**: Validated with Zod, protected with honeypot spam traps, and equipped with graceful local fallback logging or Resend integration.
-7. **Accessibility & SEO**: Semantic HTML5 markup, WCAG 2.2 AA contrast compliance, OpenGraph metadata, JSON-LD ready, sitemap, and robots.txt.
-8. **Dark / Light Mode**: Smooth theme toggling without flicker.
+### Prerequisites
+- Node.js 20.x or 22.x
+- npm
 
----
-
-## 🛠️ Getting Started
-
-### 1. Clone & Install Dependencies
-
+### Installation
 ```bash
-git clone https://github.com/omnitech-digital/omnitech-web.git
-cd omnitech-web
+git clone git@github.com:SirTebz/OmniTech.git
+cd OmniTech
 npm install
 ```
 
-### 2. Configure Environment Variables
-
-Copy `.env.example` to `.env.local`:
-
-```bash
-cp .env.example .env.local
-```
-
-| Variable | Description | Default / Example |
-|---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Canonical website domain | `https://omnitech.dev` |
-| `NEXT_PUBLIC_CONTACT_EMAIL` | Display contact email | `hello@omnitech.dev` |
-| `NEXT_PUBLIC_CONTACT_PHONE` | Display phone number | `+27 (0) 10 500 8492` |
-| `RESEND_API_KEY` | *(Optional)* Resend API Key for sending emails | `re_...` |
-| `CONTACT_RECEIVER_EMAIL` | Destination mailbox for inquiries | `hello@omnitech.dev` |
-
-> **Note**: If `RESEND_API_KEY` is not provided, the contact API will process inquiries gracefully in development mode and log them to the console without throwing errors.
-
-### 3. Run Development Server
-
+### Development Server
 ```bash
 npm run dev
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser.
+### Type Checking & Testing
+```bash
+# TypeScript compiler check
+npx tsc --noEmit
 
-### 4. Build for Production
+# Run automated Vitest test suites
+npx vitest run
+```
 
+### Production Build
 ```bash
 npm run build
 npm run start
@@ -78,52 +87,12 @@ npm run start
 
 ---
 
-## 📁 Project Architecture
+## 5. Contact Information
 
-```text
-src/
-├── app/
-│   ├── api/contact/route.ts   # Server-side contact validation & email handler
-│   ├── about/page.tsx         # Philosophy, commitments, and team approach
-│   ├── contact/page.tsx       # Contact form & direct studio details
-│   ├── services/page.tsx      # Comprehensive capability breakdown
-│   ├── work/
-│   │   ├── page.tsx           # Case study catalog
-│   │   └── [slug]/page.tsx    # Dynamic detailed project view
-│   ├── globals.css            # Tailwind theme tokens & utilities
-│   ├── layout.tsx             # Root layout with ThemeProvider, Nav, Footer
-│   ├── not-found.tsx          # Minimalist 404 handler
-│   ├── page.tsx               # Homepage
-│   ├── robots.ts              # Search engine robots configuration
-│   └── sitemap.ts             # Dynamic XML sitemap
-├── components/
-│   ├── forms/                 # React Hook Form + Zod form components
-│   ├── layout/                # Navbar, Footer, MobileMenu
-│   ├── sections/              # Hero, TrustStrip, Services, Process, Work, Tech, CTA
-│   ├── ui/                    # Button, Container, Reveal, ThemeToggle, SectionHeading
-│   └── theme-provider.tsx     # Next-themes client provider
-├── data/                      # Centralized data files (Content decoupled from UI)
-│   ├── navigation.ts
-│   ├── process.ts
-│   ├── projects.ts
-│   ├── services.ts
-│   ├── site.ts
-│   └── technologies.ts
-└── lib/
-    ├── utils.ts               # Tailwind class merging utility
-    └── validations/           # Zod schema definitions
-```
+- **Telephone**: `+27722389325` (`tel:+27722389325`)
+- **Email**: `sirtebz.z@gmail.com` (`mailto:sirtebz.z@gmail.com`)
+- **Location**: Johannesburg & Cape Town, South Africa
+- **GitHub**: [https://github.com/SirTebz/OmniTech](https://github.com/SirTebz/OmniTech)
 
 ---
-
-## 🧪 Testing & Verification
-
-- **Linting**: `npm run lint`
-- **TypeScript Checking**: `npx tsc --noEmit`
-- **Production Build**: `npm run build`
-
----
-
-## 📄 License
-
-Proprietary © OmniTech Digital Solutions. All rights reserved.
+© 2026 OmniTech. All rights reserved.

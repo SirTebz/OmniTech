@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, Code2 } from "lucide-react";
+import { Menu, X, ArrowRight, Terminal } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { navItems } from "@/data/navigation";
 import { Container } from "@/components/ui/container";
@@ -35,8 +35,8 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-border/80 py-3.5 shadow-sm"
-          : "bg-transparent py-5"
+          ? "bg-background/85 backdrop-blur-md border-b border-border/80 py-3 shadow-sm"
+          : "bg-transparent py-4 sm:py-5"
       )}
     >
       <Container size="default">
@@ -46,12 +46,11 @@ export function Navbar() {
             href="/"
             className="flex items-center gap-2.5 text-foreground font-bold tracking-tight text-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm group"
           >
-            <div className="w-8 h-8 rounded-lg bg-foreground text-background flex items-center justify-center font-mono text-sm font-bold tracking-tighter shadow-sm transition-transform group-hover:scale-105">
-              <Code2 className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-mono text-sm font-bold tracking-tighter shadow-sm transition-transform group-hover:scale-105">
+              <Terminal className="w-4 h-4" />
             </div>
             <span className="font-sans font-extrabold tracking-tight">
               {siteConfig.name}
-              <span className="text-muted-foreground font-light text-xs ml-1.5 font-mono">.dev</span>
             </span>
           </Link>
 
@@ -90,8 +89,8 @@ export function Navbar() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
-            <Button href="/contact" size="sm" className="font-semibold shadow-sm">
-              <span>Let&apos;s Build Together</span>
+            <Button href="/contact" size="sm" className="font-semibold shadow-sm bg-blue-600 hover:bg-blue-500 text-white border-0">
+              <span>Let&apos;s Work Together</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1 transition-transform group-hover:translate-x-0.5" />
             </Button>
           </div>
@@ -140,16 +139,27 @@ export function Navbar() {
                           : "text-muted-foreground hover:bg-accent/50 hover:text-foreground"
                       )}
                     >
-                      <span>{item.label}</span>
+                      <div>
+                        <span className="block">{item.label}</span>
+                        {item.description && (
+                          <span className="text-xs text-muted-foreground font-normal">
+                            {item.description}
+                          </span>
+                        )}
+                      </div>
                       <ArrowRight className="w-4 h-4 opacity-40" />
                     </Link>
                   );
                 })}
               </nav>
               <div className="pt-2 border-t border-border flex flex-col gap-3">
-                <Button href="/contact" size="md" className="w-full justify-center">
-                  Let&apos;s Build Together
+                <Button href="/contact" size="md" className="w-full justify-center bg-blue-600 hover:bg-blue-500 text-white">
+                  Let&apos;s Work Together
                 </Button>
+                <div className="flex flex-col gap-1 text-xs text-muted-foreground px-2 pt-2">
+                  <span>Phone: <a href={`tel:${siteConfig.phone}`} className="text-foreground hover:underline">{siteConfig.phoneDisplay}</a></span>
+                  <span>Email: <a href={`mailto:${siteConfig.email}`} className="text-foreground hover:underline">{siteConfig.email}</a></span>
+                </div>
               </div>
             </Container>
           </motion.div>

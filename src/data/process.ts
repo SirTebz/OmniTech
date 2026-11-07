@@ -1,70 +1,81 @@
 export interface ProcessStep {
-  number: string;
+  step: string;
   title: string;
-  summary: string;
-  details: string[];
-  deliverable: string;
+  subtitle: string;
+  description: string;
+  deliverables: string[];
+  disciplines: string[];
 }
 
 export const processSteps: ProcessStep[] = [
   {
-    number: "01",
-    title: "Discover",
-    summary: "Understand the core idea, business objectives, target users, and functional requirements.",
-    details: [
-      "Discovery consultation & scope definition",
-      "User persona & journey mapping",
-      "Technical feasibility & architectural assessment",
-      "Timeline & milestone agreement",
+    step: "01",
+    title: "Discover & Diagnose",
+    subtitle: "Understanding root objectives and technical constraints",
+    description:
+      "Every project or support engagement begins by understanding the operational problem. Whether gathering requirements for a custom business application, auditing an intermittent system bug, or reviewing IT support workflows, we examine the problem without assumptions.",
+    deliverables: [
+      "Requirements & Scope Specification",
+      "Current-State Diagnostic Review",
+      "Technical Feasibility & Architecture Plan",
+      "Risk & Constraint Assessment",
     ],
-    deliverable: "Product Scope & Technical Roadmap",
+    disciplines: ["Software Development", "IT Support", "Application Support", "Data Analytics"],
   },
   {
-    number: "02",
-    title: "Design",
-    summary: "Plan the intuitive experience, system structure, wireframes, and design system.",
-    details: [
-      "Information architecture & content hierarchy",
-      "Low-to-high fidelity interactive wireframes",
-      "Monochrome/minimal design system & typography tokens",
-      "Responsive viewport & accessibility validation",
+    step: "02",
+    title: "Plan & Architect",
+    subtitle: "Structuring clean solutions and actionable workflows",
+    description:
+      "We design the technical blueprint: database schema modeling, user journey flows, incident triage protocols, or data extraction queries. Clear planning eliminates tech debt and guarantees alignment before writing code or altering production environments.",
+    deliverables: [
+      "Database & System Entity Models",
+      "Interactive Wireframes & Component Specs",
+      "Service Desk SLA & Escalation Matrices",
+      "Data Transformation & KPI Formulas",
     ],
-    deliverable: "Interactive Prototypes & UI Tokens",
+    disciplines: ["Software Development", "IT Support", "Application Support", "Data Analytics"],
   },
   {
-    number: "03",
-    title: "Build",
-    summary: "Develop the solution using modern frameworks, strict TypeScript, and clean engineering practices.",
-    details: [
-      "Modular frontend development with Next.js & Tailwind",
-      "Robust backend API and database schemas",
-      "State management, form validations, and micro-interactions",
-      "Code reviews, clean architecture, and git versioning",
+    step: "03",
+    title: "Design & Prototype",
+    subtitle: "Human ergonomics, accessible design & rapid validation",
+    description:
+      "We build clean, distraction-free interfaces adhering to WCAG 2.2 AA standards. Users should accomplish tasks with minimal friction, whether using a customer-facing portal, an IT service desk dashboard, or an executive BI reporting board.",
+    deliverables: [
+      "High-Fidelity Component Systems",
+      "Responsive Desktop & Mobile Layouts",
+      "Accessibility & Contrast Validation",
+      "Interactive Review Prototypes",
     ],
-    deliverable: "Clean, Fully Functional Application Codebase",
+    disciplines: ["UI/UX Design", "Web Development", "Analytics Dashboards"],
   },
   {
-    number: "04",
-    title: "Test",
-    summary: "Validate functionality, cross-browser responsiveness, accessibility, and high performance.",
-    details: [
-      "End-to-end user flow verification",
-      "Lighthouse Core Web Vitals profiling (<100ms TBT)",
-      "WCAG 2.2 AA accessibility audit & keyboard navigation",
-      "API vulnerability and edge-case stress tests",
+    step: "04",
+    title: "Build & Implement",
+    subtitle: "Writing resilient code, configuring systems & modeling data",
+    description:
+      "Execution with precision. Software features are written in typed languages with strict adherence to architectural standards. IT support configurations and analytical ETL pipelines are implemented with deterministic data checks and security best practices.",
+    deliverables: [
+      "Type-Safe Production Codebases",
+      "REST APIs & Relational Database Integration",
+      "Configured Operating Systems & Helpdesk Workflows",
+      "Automated Data Cleaning & BI Visualisations",
     ],
-    deliverable: "QA Test Suite & Performance Audit Report",
+    disciplines: ["Software Development", "Application Support", "Data Analytics"],
   },
   {
-    number: "05",
-    title: "Launch & Improve",
-    summary: "Deploy to production, configure monitoring, and provide continuous enhancements.",
-    details: [
-      "Automated CI/CD deployment on Vercel / Cloud Provider",
-      "Custom domain, SSL, DNS & security headers setup",
-      "Analytics & exception logging configuration",
-      "Post-launch handover & continuous SLA support",
+    step: "05",
+    title: "Test, Deliver & Support",
+    subtitle: "Rigorous verification, clear documentation & proactive maintenance",
+    description:
+      "Nothing ships without validation. We execute unit tests, end-to-end checks, regression tests, and user acceptance reviews. Handover includes thorough documentation, runbooks, and ongoing monitoring so systems remain reliable indefinitely.",
+    deliverables: [
+      "Automated Test Suites & QA Reports",
+      "Production Deployment & DNS / Hosting Setup",
+      "Comprehensive Technical Documentation & SOPs",
+      "Ongoing Maintenance & Technical Support",
     ],
-    deliverable: "Live Production Product & Documentation",
+    disciplines: ["Software Development", "IT Support", "Application Support", "Website Maintenance"],
   },
 ];

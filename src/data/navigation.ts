@@ -6,8 +6,9 @@ export interface NavItem {
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services", description: "What we build & solve" },
-  { label: "Work", href: "/work", description: "Selected projects & case studies" },
-  { label: "About", href: "/about", description: "Our philosophy & engineering approach" },
-  { label: "Contact", href: "/contact", description: "Start a project with us" },
+  { label: "About", href: "/about", description: "Background, capabilities & problem-solving approach" },
+  { label: "Services", href: "/services", description: "Software development, IT support, apps & analytics" },
+  { label: "Projects", href: "/work", description: "Interactive demos & engineering portfolio" },
+  { label: "Process", href: "/process", description: "How we discover, build, deliver & support" },
+  { label: "Contact", href: "/contact", description: "Start a project or request technical support" },
 ];

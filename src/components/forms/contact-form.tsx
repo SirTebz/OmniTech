@@ -2,30 +2,30 @@
 
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { contactFormSchema, ContactFormData } from "@/lib/validations/contact";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  contactFormSchema,
+  ContactFormData,
+  contactServiceOptions,
+} from "@/lib/validations/contact";
+import { siteConfig } from "@/data/site";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, AlertCircle, Loader2, Send } from "lucide-react";
-
-const projectTypes = [
-  "Website",
-  "Web Application",
-  "Custom Software",
-  "Website Improvement",
-  "Technical Support",
-  "Other",
-];
-
-const budgetRanges = [
-  "R15,000 - R30,000",
-  "R30,000 - R60,000",
-  "R60,000 - R120,000",
-  "R120,000+",
-  "Flexible / Not sure yet",
-];
+import {
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Sparkles,
+} from "lucide-react";
 
 export function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [submissionStatus, setSubmissionStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [serverMessage, setServerMessage] = useState("");
 
   const {
     register,
@@ -33,20 +33,17 @@ export function ContactForm() {
     reset,
     formState: { errors },
   } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      company: "",
-      projectType: "Website",
-      budgetRange: "",
-      message: "",
-      website: "",
+      service: "Software Development",
+      preferredContact: "Email",
+      website: "", // honeypot
     },
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    setStatus("submitting");
-    setErrorMessage("");
+    setSubmissionStatus("submitting");
+    setServerMessage("");
 
     try {
       const response = await fetch("/api/contact", {
@@ -55,192 +52,273 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
+      const resJson = await response.json();
 
-      if (!response.ok) {
-        throw new Error(result.error || "Failed to submit your inquiry. Please try again.");
+      if (response.ok) {
+        setSubmissionStatus("success");
+        setServerMessage(resJson.message || "Enquiry sent successfully!");
+        reset();
+      } else {
+        setSubmissionStatus("error");
+        setServerMessage(resJson.error || "Failed to submit enquiry. Please try again.");
       }
-
-      setStatus("success");
-      reset();
-    } catch (err: any) {
-      setStatus("error");
-      setErrorMessage(err.message || "An unexpected error occurred. Please try again or email us directly.");
+    } catch {
+      setSubmissionStatus("error");
+      setServerMessage("Network error occurred. Please contact directly via email.");
     }
   };
 
-  if (status === "success") {
-    return (
-      <div className="p-8 sm:p-10 rounded-2xl border border-border bg-card shadow-sm text-center space-y-4">
-        <div className="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-500 mx-auto flex items-center justify-center">
-          <CheckCircle2 className="w-6 h-6" />
-        </div>
-        <h3 className="text-2xl font-bold text-foreground">Message received.</h3>
-        <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
-          Thank you for reaching out to OmniTech. We have received your project details and will review them shortly. You can expect a response within 24 business hours.
-        </p>
-        <div className="pt-4">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setStatus("idle")}
-          >
-            Send another message
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="p-6 sm:p-10 rounded-2xl border border-border bg-card shadow-sm space-y-6"
-      noValidate
-    >
-      {/* Honeypot anti-spam field */}
-      <input
-        type="text"
-        className="hidden"
-        tabIndex={-1}
-        autoComplete="off"
-        {...register("website")}
-      />
-
-      {status === "error" && (
-        <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-400 text-xs flex items-center gap-2">
-          <AlertCircle className="w-4 h-4 shrink-0" />
-          <span>{errorMessage}</span>
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {/* Name */}
-        <div className="space-y-2">
-          <label htmlFor="name" className="block text-xs font-mono uppercase font-semibold text-foreground">
-            Full Name <span className="text-red-500">*</span>
-          </label>
-          <input
-            id="name"
-            type="text"
-            placeholder="Jane Doe"
-            className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-            {...register("name", { required: "Name is required" })}
-          />
-          {errors.name && (
-            <p className="text-[11px] text-red-500 font-mono">{errors.name.message}</p>
-          )}
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      {/* Left Column: Direct Contact Details & Context */}
+      <div className="lg:col-span-5 space-y-8">
+        <div className="space-y-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 font-mono">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Direct Client & Business Support</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground font-sans">
+            Let&apos;s Build, Support, or Troubleshoot Together
+          </h2>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Whether you need custom software engineered, IT helpdesk troubleshooting, production application support, or data analytics reporting, I provide direct, accountable technical services.
+          </p>
         </div>
 
-        {/* Email */}
-        <div className="space-y-2">
-          <label htmlFor="email" className="block text-xs font-mono uppercase font-semibold text-foreground">
-            Email Address <span className="text-red-500">*</span>
-          </label>
-          <input
-            id="email"
-            type="email"
-            placeholder="jane@company.com"
-            className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-            {...register("email", { required: "Email is required" })}
-          />
-          {errors.email && (
-            <p className="text-[11px] text-red-500 font-mono">{errors.email.message}</p>
-          )}
-        </div>
-      </div>
+        {/* Contact Info Cards */}
+        <div className="space-y-4 text-xs font-mono">
+          <div className="p-4 rounded-xl bg-card border border-border flex items-start gap-3.5">
+            <div className="p-2.5 rounded-lg bg-blue-500/10 text-blue-500 shrink-0">
+              <Phone className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="block text-muted-foreground uppercase text-[10px] mb-0.5">Telephone / Mobile</span>
+              <a
+                href={`tel:${siteConfig.phone}`}
+                className="text-sm font-bold text-foreground hover:text-blue-500 hover:underline"
+              >
+                {siteConfig.phoneDisplay}
+              </a>
+              <span className="block text-muted-foreground text-[11px] mt-0.5">Available for direct calls & WhatsApp</span>
+            </div>
+          </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {/* Company */}
-        <div className="space-y-2">
-          <label htmlFor="company" className="block text-xs font-mono uppercase font-semibold text-foreground">
-            Company / Organisation <span className="text-muted-foreground font-normal">(Optional)</span>
-          </label>
-          <input
-            id="company"
-            type="text"
-            placeholder="Acme Inc."
-            className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-            {...register("company")}
-          />
-        </div>
+          <div className="p-4 rounded-xl bg-card border border-border flex items-start gap-3.5">
+            <div className="p-2.5 rounded-lg bg-blue-500/10 text-blue-500 shrink-0">
+              <Mail className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="block text-muted-foreground uppercase text-[10px] mb-0.5">Email Address</span>
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="text-sm font-bold text-foreground hover:text-blue-500 hover:underline"
+              >
+                {siteConfig.email}
+              </a>
+              <span className="block text-muted-foreground text-[11px] mt-0.5">Direct project inquiries & support requests</span>
+            </div>
+          </div>
 
-        {/* Project Type */}
-        <div className="space-y-2">
-          <label htmlFor="projectType" className="block text-xs font-mono uppercase font-semibold text-foreground">
-            Project Type <span className="text-red-500">*</span>
-          </label>
-          <select
-            id="projectType"
-            className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-            {...register("projectType")}
-          >
-            {projectTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
+          <div className="p-4 rounded-xl bg-card border border-border flex items-start gap-3.5">
+            <div className="p-2.5 rounded-lg bg-blue-500/10 text-blue-500 shrink-0">
+              <MapPin className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="block text-muted-foreground uppercase text-[10px] mb-0.5">Location & Operations</span>
+              <span className="text-sm font-bold text-foreground block">
+                {siteConfig.location}
+              </span>
+              <span className="block text-muted-foreground text-[11px] mt-0.5">Available for remote & hybrid engagements</span>
+            </div>
+          </div>
+
+          <div className="p-4 rounded-xl bg-card border border-border flex items-start gap-3.5">
+            <div className="p-2.5 rounded-lg bg-blue-500/10 text-blue-500 shrink-0">
+              <Clock className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="block text-muted-foreground uppercase text-[10px] mb-0.5">Support Availability</span>
+              <span className="text-sm font-bold text-foreground block">
+                {siteConfig.workingHours}
+              </span>
+              <span className="block text-muted-foreground text-[11px] mt-0.5">Rapid turnaround for high-priority support</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Budget Range */}
-      <div className="space-y-2">
-        <label htmlFor="budgetRange" className="block text-xs font-mono uppercase font-semibold text-foreground">
-          Estimated Budget Range <span className="text-muted-foreground font-normal">(Optional)</span>
-        </label>
-        <select
-          id="budgetRange"
-          className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
-          {...register("budgetRange")}
-        >
-          <option value="">Select a range (flexible)</option>
-          {budgetRanges.map((range) => (
-            <option key={range} value={range}>
-              {range}
-            </option>
-          ))}
-        </select>
-      </div>
+      {/* Right Column: Interactive Form */}
+      <div className="lg:col-span-7 p-6 sm:p-8 rounded-2xl bg-card border border-border shadow-sm">
+        {submissionStatus === "success" ? (
+          <div className="py-12 text-center space-y-4">
+            <div className="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto">
+              <CheckCircle2 className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground">Message Received!</h3>
+            <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
+              {serverMessage}
+            </p>
+            <div className="pt-4">
+              <button
+                onClick={() => setSubmissionStatus("idle")}
+                className="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs font-mono"
+              >
+                Send Another Message
+              </button>
+            </div>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            {submissionStatus === "error" && (
+              <div className="p-3.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-500 text-xs flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 shrink-0" />
+                <span>{serverMessage}</span>
+              </div>
+            )}
 
-      {/* Message */}
-      <div className="space-y-2">
-        <label htmlFor="message" className="block text-xs font-mono uppercase font-semibold text-foreground">
-          Project Details & Objectives <span className="text-red-500">*</span>
-        </label>
-        <textarea
-          id="message"
-          rows={5}
-          placeholder="Tell us about what you want to build, the key features, timeline, or current challenges..."
-          className="w-full px-4 py-2.5 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all resize-y"
-          {...register("message", { required: "Message is required" })}
-        />
-        {errors.message && (
-          <p className="text-[11px] text-red-500 font-mono">{errors.message.message}</p>
+            {/* Hidden honeypot field */}
+            <input
+              type="text"
+              {...register("website")}
+              className="hidden"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-mono font-medium mb-1.5 text-foreground">
+                  Your Full Name *
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Sipho Ndlovu"
+                  {...register("name")}
+                  className="w-full px-3.5 py-2.5 text-xs rounded-lg bg-background border border-border focus:outline-none focus:ring-1 focus:ring-blue-500 text-foreground"
+                />
+                {errors.name && (
+                  <p className="text-[11px] text-rose-500 mt-1 font-mono">{errors.name.message}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-xs font-mono font-medium mb-1.5 text-foreground">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  placeholder="name@company.co.za"
+                  {...register("email")}
+                  className="w-full px-3.5 py-2.5 text-xs rounded-lg bg-background border border-border focus:outline-none focus:ring-1 focus:ring-blue-500 text-foreground"
+                />
+                {errors.email && (
+                  <p className="text-[11px] text-rose-500 mt-1 font-mono">{errors.email.message}</p>
+                )}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-mono font-medium mb-1.5 text-foreground">
+                  Contact Number (Optional)
+                </label>
+                <input
+                  type="tel"
+                  placeholder="+27 72 000 0000"
+                  {...register("phone")}
+                  className="w-full px-3.5 py-2.5 text-xs rounded-lg bg-background border border-border focus:outline-none focus:ring-1 focus:ring-blue-500 text-foreground"
+                />
+                {errors.phone && (
+                  <p className="text-[11px] text-rose-500 mt-1 font-mono">{errors.phone.message}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-xs font-mono font-medium mb-1.5 text-foreground">
+                  Service Area of Interest *
+                </label>
+                <select
+                  {...register("service")}
+                  className="w-full px-3.5 py-2.5 text-xs rounded-lg bg-background border border-border focus:outline-none focus:ring-1 focus:ring-blue-500 text-foreground font-sans"
+                >
+                  {contactServiceOptions.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+                {errors.service && (
+                  <p className="text-[11px] text-rose-500 mt-1 font-mono">{errors.service.message}</p>
+                )}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-xs font-mono font-medium mb-1.5 text-foreground">
+                  Subject / Summary *
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Custom CRM integration or urgent M365 email troubleshooting"
+                  {...register("subject")}
+                  className="w-full px-3.5 py-2.5 text-xs rounded-lg bg-background border border-border focus:outline-none focus:ring-1 focus:ring-blue-500 text-foreground"
+                />
+                {errors.subject && (
+                  <p className="text-[11px] text-rose-500 mt-1 font-mono">{errors.subject.message}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-xs font-mono font-medium mb-1.5 text-foreground">
+                  Preferred Contact Channel
+                </label>
+                <select
+                  {...register("preferredContact")}
+                  className="w-full px-3.5 py-2.5 text-xs rounded-lg bg-background border border-border focus:outline-none focus:ring-1 focus:ring-blue-500 text-foreground font-sans"
+                >
+                  <option value="Email">Email response</option>
+                  <option value="Phone">Phone call</option>
+                  <option value="Either">Either channel</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-xs font-mono font-medium mb-1.5 text-foreground">
+                Project or Problem Description *
+              </label>
+              <textarea
+                rows={5}
+                placeholder="Please describe your software requirements, system issues, or operational analytics goals..."
+                {...register("message")}
+                className="w-full px-3.5 py-2.5 text-xs rounded-lg bg-background border border-border focus:outline-none focus:ring-1 focus:ring-blue-500 text-foreground leading-relaxed"
+              />
+              {errors.message && (
+                <p className="text-[11px] text-rose-500 mt-1 font-mono">{errors.message.message}</p>
+              )}
+            </div>
+
+            <div className="pt-2">
+              <Button
+                type="submit"
+                size="md"
+                disabled={submissionStatus === "submitting"}
+                className="w-full justify-center bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3"
+              >
+                {submissionStatus === "submitting" ? (
+                  <span>Submitting Enquiry...</span>
+                ) : (
+                  <span className="inline-flex items-center gap-1.5">
+                    <span>Send Message</span>
+                    <Send className="w-4 h-4 ml-1" />
+                  </span>
+                )}
+              </Button>
+            </div>
+          </form>
         )}
       </div>
-
-      {/* Submit Button */}
-      <div className="pt-2">
-        <Button
-          type="submit"
-          size="lg"
-          disabled={status === "submitting"}
-          className="w-full sm:w-auto font-semibold"
-        >
-          {status === "submitting" ? (
-            <>
-              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-              <span>Transmitting Inquiry...</span>
-            </>
-          ) : (
-            <>
-              <span>Send Project Inquiry</span>
-              <Send className="w-4 h-4 ml-2" />
-            </>
-          )}
-        </Button>
-      </div>
-    </form>
+    </div>
   );
 }

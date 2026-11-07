@@ -1,144 +1,161 @@
-import type { Metadata } from "next";
+import React from "react";
+import Link from "next/link";
+import { Metadata } from "next";
 import { servicesData } from "@/data/services";
+import { siteConfig } from "@/data/site";
 import { Container } from "@/components/ui/container";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
-import { CTASection } from "@/components/sections/cta-section";
 import {
+  Code2,
+  Headphones,
+  Activity,
+  BarChart3,
   Globe,
-  LayoutDashboard,
-  Cpu,
-  ShieldCheck,
-  Palette,
-  Terminal,
+  Layout,
   ArrowRight,
   CheckCircle2,
-  Code2,
+  Phone,
+  Mail,
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services & Capabilities",
+  title: "Professional Technology Services",
   description:
-    "Explore OmniTech's comprehensive software and web development services: Modern Websites, Web Applications, Custom Software, Maintenance, UI/UX, and Technical Consulting.",
-};
-
-const iconMap: Record<string, React.ReactNode> = {
-  Globe: <Globe className="w-8 h-8" />,
-  LayoutDashboard: <LayoutDashboard className="w-8 h-8" />,
-  Cpu: <Cpu className="w-8 h-8" />,
-  ShieldCheck: <ShieldCheck className="w-8 h-8" />,
-  Palette: <Palette className="w-8 h-8" />,
-  Terminal: <Terminal className="w-8 h-8" />,
+    "Comprehensive technology engineering and systems support: software development, IT helpdesk, application incident management, data analytics, and modern web platforms.",
 };
 
 export default function ServicesPage() {
-  return (
-    <div className="pt-28 pb-16">
-      {/* Services Header */}
-      <section className="py-12 sm:py-20 bg-background border-b border-border">
-        <Container size="default">
-          <SectionHeading
-            eyebrow="CAPABILITIES & ENGINEERING"
-            title="Services built around real business challenges."
-            subtitle="We don't just write code. We architect scalable digital systems that deliver operational reliability, fast performance, and commercial value."
-          />
-        </Container>
-      </section>
+  const getIcon = (name: string) => {
+    switch (name) {
+      case "Code2":
+        return <Code2 className="w-6 h-6 text-blue-500" />;
+      case "Headphones":
+        return <Headphones className="w-6 h-6 text-blue-500" />;
+      case "Activity":
+        return <Activity className="w-6 h-6 text-blue-500" />;
+      case "BarChart3":
+        return <BarChart3 className="w-6 h-6 text-blue-500" />;
+      case "Globe":
+        return <Globe className="w-6 h-6 text-blue-500" />;
+      default:
+        return <Layout className="w-6 h-6 text-blue-500" />;
+    }
+  };
 
-      {/* Services Detailed List */}
-      <section className="py-20 bg-background">
-        <Container size="default" className="space-y-24">
-          {servicesData.map((service, idx) => (
+  return (
+    <div className="pt-28 pb-24 space-y-20">
+      {/* Services Header */}
+      <Container size="default">
+        <div className="max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 font-mono">
+            <span>Engineering, Operations & Analytics</span>
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground font-sans">
+            Technology Services That Go Beyond Development
+          </h1>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            From architecting database-driven applications to resolving urgent IT helpdesk incidents, diagnosing application errors, and transforming transactional data into actionable business intelligence, OmniTech delivers disciplined, end-to-end technical capabilities.
+          </p>
+        </div>
+      </Container>
+
+      {/* Services Cards Grid */}
+      <Container size="default">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {servicesData.map((service) => (
             <div
               key={service.id}
-              id={service.id}
-              className="scroll-mt-32 rounded-2xl border border-border bg-card p-8 sm:p-12 lg:p-14 shadow-xs"
+              className="p-6 sm:p-7 rounded-2xl bg-card border border-border hover:border-blue-500/50 transition-all flex flex-col justify-between space-y-6 group"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
-                {/* Left Overview */}
-                <div className="lg:col-span-6 space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-secondary text-foreground flex items-center justify-center">
-                      {iconMap[service.iconName] || <Terminal className="w-8 h-8" />}
-                    </div>
-                    <div>
-                      <span className="text-xs font-mono text-muted-foreground uppercase font-bold">
-                        Service 0{idx + 1}
-                      </span>
-                      <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
-                        {service.title}
-                      </h2>
-                    </div>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20">
+                    {getIcon(service.iconName)}
                   </div>
-
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    {service.fullDescription}
-                  </p>
-
-                  <div className="pt-4 space-y-3">
-                    <h3 className="text-xs font-mono uppercase font-bold tracking-wider text-foreground">
-                      Common Deliverables:
-                    </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {service.deliverables.map((del) => (
-                        <span
-                          key={del}
-                          className="px-3 py-1.5 rounded-md bg-secondary text-xs font-medium text-foreground"
-                        >
-                          {del}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="pt-4 flex items-center gap-4">
-                    <Button href="/contact" size="md">
-                      <span>Request a Quote for {service.title}</span>
-                      <ArrowRight className="w-4 h-4 ml-1.5" />
-                    </Button>
-                  </div>
+                  <span className="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-accent text-foreground">
+                    {service.badge}
+                  </span>
                 </div>
 
-                {/* Right Specifications */}
-                <div className="lg:col-span-6 space-y-8 bg-background/60 p-6 sm:p-8 rounded-xl border border-border/80">
-                  <div className="space-y-4">
-                    <h3 className="text-xs font-mono uppercase font-bold tracking-wider text-foreground flex items-center gap-2">
-                      <Code2 className="w-4 h-4" />
-                      Key Features & Engineering Specs
-                    </h3>
-                    <ul className="space-y-3">
-                      {service.features.map((feat) => (
-                        <li key={feat} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                          <CheckCircle2 className="w-4 h-4 text-foreground shrink-0 mt-0.5" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-blue-500 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs text-muted-foreground font-mono mt-1">
+                    {service.category}
+                  </p>
+                </div>
 
-                  <div className="pt-4 border-t border-border space-y-3">
-                    <h3 className="text-xs font-mono uppercase font-bold tracking-wider text-muted-foreground">
-                      Primary Technologies Applied:
-                    </h3>
-                    <div className="flex flex-wrap gap-1.5 font-mono text-xs text-muted-foreground">
-                      {service.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-1 rounded border border-border bg-card text-foreground"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {service.shortDescription}
+                </p>
+
+                <div className="pt-2 space-y-2 border-t border-border/60">
+                  <span className="text-xs font-mono font-semibold text-foreground uppercase tracking-wider block">
+                    Core Capabilities
+                  </span>
+                  <ul className="space-y-1.5 text-xs text-muted-foreground">
+                    {service.features.slice(0, 3).map((feat, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 shrink-0 mt-0.5" />
+                        <span className="line-clamp-1">{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-border flex items-center justify-between">
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="text-xs font-semibold text-blue-600 dark:text-blue-400 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
+                >
+                  <span>Explore Deep Dive</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <div className="flex flex-wrap gap-1">
+                  {service.technologies.slice(0, 2).map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-0.5 text-[10px] font-mono rounded bg-background border border-border text-muted-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
           ))}
-        </Container>
-      </section>
+        </div>
+      </Container>
 
-      <CTASection />
+      {/* Direct Contact Banner */}
+      <Container size="default">
+        <div className="p-8 sm:p-12 rounded-3xl bg-neutral-950 text-white border border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <h2 className="text-2xl font-bold tracking-tight">
+              Have a Specific Technical Challenge or Project?
+            </h2>
+            <p className="text-sm text-neutral-400 max-w-xl">
+              Available for custom software development, managed IT support contracts, application incident diagnostics, and data analytics consulting.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <Button href="/contact" size="md" className="bg-blue-600 hover:bg-blue-500 text-white font-semibold">
+              <span>Let&apos;s Work Together</span>
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Button>
+            <a
+              href={`tel:${siteConfig.phone}`}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-neutral-800 bg-neutral-900 hover:bg-neutral-800 text-xs font-mono font-medium transition-colors"
+            >
+              <Phone className="w-3.5 h-3.5 text-blue-400" />
+              <span>{siteConfig.phoneDisplay}</span>
+            </a>
+          </div>
+        </div>
+      </Container>
     </div>
   );
 }

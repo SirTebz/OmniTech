@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validations/contact";
+import { siteConfig } from "@/data/site";
 
 export async function POST(request: Request) {
   try {
@@ -10,7 +11,7 @@ export async function POST(request: Request) {
     if (!validationResult.success) {
       return NextResponse.json(
         {
-          error: "Invalid form data provided.",
+          error: "Invalid enquiry data provided.",
           issues: validationResult.error.flatten().fieldErrors,
         },
         { status: 400 }
@@ -19,22 +20,20 @@ export async function POST(request: Request) {
 
     const data = validationResult.data;
 
-    // 2. Honeypot check
+    // 2. Honeypot anti-spam check
     if (data.website && data.website.length > 0) {
       return NextResponse.json(
-        { success: true, message: "Inquiry received." },
+        { success: true, message: "Enquiry received successfully." },
         { status: 200 }
       );
     }
 
-    // 3. Provider-Agnostic Email Dispatch
-    // Check if provider credentials (e.g. Resend, Sendgrid, SMTP) are present
+    // 3. Email Dispatch via Resend (if configured)
     const resendApiKey = process.env.RESEND_API_KEY;
-    const recipientEmail = process.env.CONTACT_RECEIVER_EMAIL || "hello@omnitech.dev";
+    const recipientEmail = process.env.CONTACT_RECEIVER_EMAIL || siteConfig.email;
 
     if (resendApiKey) {
       try {
-        // Send email via Resend API
         const emailRes = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
@@ -42,16 +41,17 @@ export async function POST(request: Request) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: process.env.EMAIL_FROM || "OmniTech Contact <inquiries@omnitech.dev>",
+            from: process.env.EMAIL_FROM || `OmniTech Inquiries <inquiries@omnitech.dev>`,
             to: recipientEmail,
             reply_to: data.email,
-            subject: `[OmniTech Project Inquiry] - ${data.projectType} from ${data.name}`,
+            subject: `[OmniTech Enquiry] ${data.service}: ${data.subject}`,
             text: `
 Name: ${data.name}
 Email: ${data.email}
-Company: ${data.company || "N/A"}
-Project Type: ${data.projectType}
-Budget: ${data.budgetRange || "Flexible"}
+Phone: ${data.phone || "Not provided"}
+Service Required: ${data.service}
+Preferred Contact: ${data.preferredContact}
+Subject: ${data.subject}
 
 Message:
 ${data.message}
@@ -60,18 +60,20 @@ ${data.message}
         });
 
         if (!emailRes.ok) {
-          console.error("Resend API failed:", await emailRes.text());
+          console.error("Resend API responded with error:", await emailRes.text());
         }
       } catch (emailErr) {
-        console.error("Failed to send email via configured provider:", emailErr);
+        console.error("Failed to deliver email through Resend API:", emailErr);
       }
     } else {
-      // In development or when credentials are not yet supplied, log the payload safely
+      // Development or test fallback logging
       console.log("------------------------------------------");
-      console.log("[OmniTech DEV Contact Submission]");
-      console.log(`From: ${data.name} <${data.email}>`);
-      console.log(`Company: ${data.company || "None"}`);
-      console.log(`Type: ${data.projectType} | Budget: ${data.budgetRange || "Flexible"}`);
+      console.log("[OmniTech Contact Form Fallback Logging]");
+      console.log(`To: ${recipientEmail}`);
+      console.log(`From: ${data.name} (${data.email})`);
+      console.log(`Phone: ${data.phone || "N/A"}`);
+      console.log(`Service: ${data.service}`);
+      console.log(`Subject: ${data.subject}`);
       console.log(`Message: ${data.message}`);
       console.log("------------------------------------------");
     }
@@ -79,14 +81,18 @@ ${data.message}
     return NextResponse.json(
       {
         success: true,
-        message: "Your inquiry has been successfully received. We will be in touch shortly.",
+        message:
+          "Thank you for reaching out! Your message has been received and I will respond to your enquiry promptly.",
       },
       { status: 200 }
     );
   } catch (error) {
     console.error("Contact API Server Error:", error);
     return NextResponse.json(
-      { error: "Internal server error. Please try again later." },
+      {
+        error:
+          "An unexpected server error occurred while processing your enquiry. Please reach out directly via email.",
+      },
       { status: 500 }
     );
   }
