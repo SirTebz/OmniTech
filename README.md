@@ -91,7 +91,7 @@ npm run start
 
 - **Telephone**: `+27722389325` (`tel:+27722389325`)
 - **Email**: `sirtebz.z@gmail.com` (`mailto:sirtebz.z@gmail.com`)
-- **Location**: Johannesburg & Cape Town, South Africa
+- **Location**: South Africa
 - **GitHub**: [https://github.com/SirTebz/OmniTech](https://github.com/SirTebz/OmniTech)
 
 ---

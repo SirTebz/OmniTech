@@ -10,7 +10,7 @@ export const siteConfig = {
   email: "sirtebz.z@gmail.com",
   phone: "+27722389325",
   phoneDisplay: "+27 72 238 9325",
-  location: "Johannesburg & Cape Town, South Africa",
+  location: "South Africa",
   workingHours: "Mon - Fri: 08:30 - 17:30 (SAST)",
   social: {
     github: "https://github.com/SirTebz/OmniTech",
@@ -33,7 +33,7 @@ export const siteConfig = {
       "SQL Server reporting",
       "incident management",
       "South Africa tech services",
-      "Johannesburg IT support",
+      "South Africa IT support",
       "remote technical consulting",
     ],
   },
