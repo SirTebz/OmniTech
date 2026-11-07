@@ -8,8 +8,6 @@ export const siteConfig = {
     "OmniTech delivers end-to-end technology solutions: from engineering custom software and web applications to resolving IT support challenges, managing application incidents, and unlocking actionable insights with data analytics.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://omni-tech-three.vercel.app",
   email: "sirtebz.z@gmail.com",
-  phone: "+27722389325",
-  phoneDisplay: "+27 72 238 9325",
   location: "South Africa",
   workingHours: "Mon - Fri: 08:30 - 17:30 (SAST)",
   social: {

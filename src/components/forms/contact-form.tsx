@@ -14,7 +14,6 @@ import {
   Send,
   CheckCircle2,
   AlertCircle,
-  Phone,
   Mail,
   MapPin,
   Clock,
@@ -87,22 +86,6 @@ export function ContactForm() {
 
         {/* Contact Info Cards */}
         <div className="space-y-4 text-xs font-mono">
-          <div className="p-4 rounded-xl bg-card border border-border flex items-start gap-3.5">
-            <div className="p-2.5 rounded-lg bg-blue-500/10 text-blue-500 shrink-0">
-              <Phone className="w-4 h-4" />
-            </div>
-            <div>
-              <span className="block text-muted-foreground uppercase text-[10px] mb-0.5">Telephone / Mobile</span>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="text-sm font-bold text-foreground hover:text-blue-500 hover:underline"
-              >
-                {siteConfig.phoneDisplay}
-              </a>
-              <span className="block text-muted-foreground text-[11px] mt-0.5">Available for direct calls & WhatsApp</span>
-            </div>
-          </div>
-
           <div className="p-4 rounded-xl bg-card border border-border flex items-start gap-3.5">
             <div className="p-2.5 rounded-lg bg-blue-500/10 text-blue-500 shrink-0">
               <Mail className="w-4 h-4" />

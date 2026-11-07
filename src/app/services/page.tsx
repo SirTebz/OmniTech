@@ -14,7 +14,6 @@ import {
   Layout,
   ArrowRight,
   CheckCircle2,
-  Phone,
   Mail,
 } from "lucide-react";
 
@@ -147,11 +146,11 @@ export default function ServicesPage() {
               <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
             <a
-              href={`tel:${siteConfig.phone}`}
+              href={`mailto:${siteConfig.email}`}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-neutral-800 bg-neutral-900 hover:bg-neutral-800 text-xs font-mono font-medium transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-blue-400" />
-              <span>{siteConfig.phoneDisplay}</span>
+              <Mail className="w-3.5 h-3.5 text-blue-400" />
+              <span>{siteConfig.email}</span>
             </a>
           </div>
         </div>

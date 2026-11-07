@@ -5,7 +5,6 @@
 
 - **Live Production Website**: [https://omni-tech-three.vercel.app/](https://omni-tech-three.vercel.app/)  
 - **GitHub Repository**: [https://github.com/SirTebz/OmniTech](https://github.com/SirTebz/OmniTech)  
-- **Direct Telephone**: [+27 72 238 9325](tel:+27722389325)  
 - **Direct Email**: [sirtebz.z@gmail.com](mailto:sirtebz.z@gmail.com)  
 
 ---
@@ -89,7 +88,6 @@ npm run start
 
 ## 5. Contact Information
 
-- **Telephone**: `+27722389325` (`tel:+27722389325`)
 - **Email**: `sirtebz.z@gmail.com` (`mailto:sirtebz.z@gmail.com`)
 - **Location**: South Africa
 - **GitHub**: [https://github.com/SirTebz/OmniTech](https://github.com/SirTebz/OmniTech)

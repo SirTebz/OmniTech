@@ -6,7 +6,6 @@ import { contactFormSchema } from "@/lib/validations/contact";
 
 describe("OmniTech Core Configuration & Integrity", () => {
   it("should have official non-negotiable contact details", () => {
-    expect(siteConfig.phone).toBe("+27722389325");
     expect(siteConfig.email).toBe("sirtebz.z@gmail.com");
     expect(siteConfig.tagline).toBe("Think It. Build It. Support It. Understand It.");
     expect(siteConfig.url).toContain("omni-tech-three.vercel.app");

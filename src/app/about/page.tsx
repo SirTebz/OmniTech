@@ -15,7 +15,6 @@ import {
   ShieldCheck,
   Terminal,
   Mail,
-  Phone,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/social-icons";
 
@@ -173,11 +172,11 @@ export default function AboutPage() {
               Get in Touch
             </Button>
             <a
-              href={`tel:${siteConfig.phone}`}
+              href={`mailto:${siteConfig.email}`}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-xs font-mono transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-blue-400" />
-              <span>{siteConfig.phoneDisplay}</span>
+              <Mail className="w-3.5 h-3.5 text-blue-400" />
+              <span>{siteConfig.email}</span>
             </a>
           </div>
         </div>

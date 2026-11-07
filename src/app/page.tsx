@@ -17,7 +17,6 @@ import {
   ExternalLink,
   Sparkles,
   CheckCircle2,
-  Phone,
   Mail,
   ShieldCheck,
   Terminal,
@@ -464,13 +463,6 @@ export default function HomePage() {
                 <span>Start a Project</span>
                 <ArrowRight className="w-4 h-4 ml-1.5" />
               </Button>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-xs font-mono font-medium transition-colors"
-              >
-                <Phone className="w-3.5 h-3.5 text-blue-400" />
-                <span>Call: {siteConfig.phoneDisplay}</span>
-              </a>
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-neutral-700 bg-neutral-900 hover:bg-neutral-800 text-xs font-mono font-medium transition-colors"

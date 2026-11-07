@@ -157,7 +157,6 @@ export function Navbar() {
                   Let&apos;s Work Together
                 </Button>
                 <div className="flex flex-col gap-1 text-xs text-muted-foreground px-2 pt-2">
-                  <span>Phone: <a href={`tel:${siteConfig.phone}`} className="text-foreground hover:underline">{siteConfig.phoneDisplay}</a></span>
                   <span>Email: <a href={`mailto:${siteConfig.email}`} className="text-foreground hover:underline">{siteConfig.email}</a></span>
                 </div>
               </div>

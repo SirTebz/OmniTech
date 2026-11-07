@@ -4,7 +4,7 @@ import { siteConfig } from "@/data/site";
 import { navItems } from "@/data/navigation";
 import { servicesData } from "@/data/services";
 import { Container } from "@/components/ui/container";
-import { Terminal, Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Terminal, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/ui/social-icons";
 
 export function Footer() {
@@ -51,13 +51,6 @@ export function Footer() {
                 className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
               >
                 <Mail className="w-4 h-4" />
-              </a>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                aria-label="Call OmniTech"
-                className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
-              >
-                <Phone className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -106,17 +99,6 @@ export function Footer() {
               Direct Contact
             </h3>
             <div className="space-y-3 text-sm text-neutral-400">
-              <div>
-                <span className="block text-xs text-neutral-500 uppercase font-mono mb-0.5">Telephone</span>
-                <a
-                  href={`tel:${siteConfig.phone}`}
-                  className="text-neutral-200 hover:text-blue-400 hover:underline font-mono text-sm inline-flex items-center gap-1.5"
-                >
-                  <Phone className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                  <span>{siteConfig.phoneDisplay}</span>
-                </a>
-              </div>
-
               <div>
                 <span className="block text-xs text-neutral-500 uppercase font-mono mb-0.5">Email Address</span>
                 <a

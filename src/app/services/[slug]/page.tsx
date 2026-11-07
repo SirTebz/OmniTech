@@ -104,8 +104,8 @@ export default async function ServiceDetailPage({ params }: Props) {
               <span>Request Consultation</span>
               <ArrowRight className="w-4 h-4 ml-1.5" />
             </Button>
-            <Button href={`tel:${siteConfig.phone}`} variant="secondary" size="md">
-              <span>Direct Call: {siteConfig.phoneDisplay}</span>
+            <Button href={`mailto:${siteConfig.email}`} variant="secondary" size="md">
+              <span>Email: {siteConfig.email}</span>
             </Button>
           </div>
         </div>
