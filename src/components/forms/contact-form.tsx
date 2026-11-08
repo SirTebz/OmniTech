@@ -146,7 +146,7 @@ export function ContactForm() {
                 aria-label="GitHub Profile"
               >
                 <GithubIcon className="w-3.5 h-3.5" />
-                <span>GitHub</span>
+                {/* <span>GitHub</span> */}
               </a>
               <a
                 href={siteConfig.social.linkedin}
@@ -156,7 +156,7 @@ export function ContactForm() {
                 aria-label="LinkedIn Profile"
               >
                 <LinkedinIcon className="w-3.5 h-3.5" />
-                <span>LinkedIn</span>
+                {/* <span>LinkedIn</span> */}
               </a>
               <a
                 href={siteConfig.social.twitter}
@@ -166,7 +166,7 @@ export function ContactForm() {
                 aria-label="Twitter/X Profile"
               >
                 <TwitterIcon className="w-3.5 h-3.5" />
-                <span>X</span>
+                {/* <span>X</span> */}
               </a>
               <a
                 href={siteConfig.social.instagram}
@@ -176,7 +176,7 @@ export function ContactForm() {
                 aria-label="Instagram Profile"
               >
                 <InstagramIcon className="w-3.5 h-3.5" />
-                <span>Instagram</span>
+                {/* <span>Instagram</span> */}
               </a>
             </div>
           </div>
