@@ -5,7 +5,7 @@ import { navItems } from "@/data/navigation";
 import { servicesData } from "@/data/services";
 import { Container } from "@/components/ui/container";
 import { Terminal, Mail, MapPin, ArrowUpRight } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/ui/social-icons";
+import { GithubIcon, LinkedinIcon, TwitterIcon, InstagramIcon } from "@/components/ui/social-icons";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -35,15 +35,42 @@ export function Footer() {
               {siteConfig.subTagline}
             </p>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-2.5 pt-2">
               <a
                 href={siteConfig.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="GitHub Repository"
+                aria-label="GitHub Profile"
                 className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
               >
                 <GithubIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={siteConfig.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
+              >
+                <LinkedinIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={siteConfig.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter/X Profile"
+                className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
+              >
+                <TwitterIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Profile"
+                className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
+              >
+                <InstagramIcon className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${siteConfig.email}`}

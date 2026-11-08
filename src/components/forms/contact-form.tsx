@@ -19,6 +19,12 @@ import {
   Clock,
   Sparkles,
 } from "lucide-react";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  InstagramIcon,
+} from "@/components/ui/social-icons";
 
 export function ContactForm() {
   const [submissionStatus, setSubmissionStatus] = useState<
@@ -125,6 +131,53 @@ export function ContactForm() {
                 {siteConfig.workingHours}
               </span>
               <span className="block text-muted-foreground text-[11px] mt-0.5">Rapid turnaround for high-priority support</span>
+            </div>
+          </div>
+
+          {/* Social Profiles */}
+          <div className="p-4 rounded-xl bg-card border border-border space-y-3">
+            <span className="block text-muted-foreground uppercase text-[10px]">Connect on Social</span>
+            <div className="flex flex-wrap gap-2">
+              <a
+                href={siteConfig.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-background hover:bg-accent text-foreground hover:text-foreground text-xs font-mono transition-colors"
+                aria-label="GitHub Profile"
+              >
+                <GithubIcon className="w-3.5 h-3.5" />
+                <span>GitHub</span>
+              </a>
+              <a
+                href={siteConfig.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-background hover:bg-accent text-foreground hover:text-foreground text-xs font-mono transition-colors"
+                aria-label="LinkedIn Profile"
+              >
+                <LinkedinIcon className="w-3.5 h-3.5" />
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href={siteConfig.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-background hover:bg-accent text-foreground hover:text-foreground text-xs font-mono transition-colors"
+                aria-label="Twitter/X Profile"
+              >
+                <TwitterIcon className="w-3.5 h-3.5" />
+                <span>Twitter / X</span>
+              </a>
+              <a
+                href={siteConfig.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-background hover:bg-accent text-foreground hover:text-foreground text-xs font-mono transition-colors"
+                aria-label="Instagram Profile"
+              >
+                <InstagramIcon className="w-3.5 h-3.5" />
+                <span>Instagram</span>
+              </a>
             </div>
           </div>
         </div>

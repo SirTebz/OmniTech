@@ -11,9 +11,10 @@ export const siteConfig = {
   location: "South Africa",
   workingHours: "Mon - Fri: 08:30 - 17:30 (SAST)",
   social: {
-    github: "https://github.com/SirTebz/OmniTech",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
+    github: "https://github.com/SirTebz",
+    twitter: "https://x.com/sir_tebz",
+    linkedin: "https://www.linkedin.com/in/teboho-mokgosi/",
+    instagram: "https://instagram.com/sir_tebz",
   },
   meta: {
     titleTemplate: "%s | OmniTech — Think It. Build It. Support It. Understand It.",

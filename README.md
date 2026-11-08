@@ -90,7 +90,10 @@ npm run start
 
 - **Email**: `sirtebz.z@gmail.com` (`mailto:sirtebz.z@gmail.com`)
 - **Location**: South Africa
-- **GitHub**: [https://github.com/SirTebz/OmniTech](https://github.com/SirTebz/OmniTech)
+- **GitHub**: [https://github.com/SirTebz](https://github.com/SirTebz)
+- **LinkedIn**: [https://www.linkedin.com/in/teboho-mokgosi/](https://www.linkedin.com/in/teboho-mokgosi/)
+- **Twitter/X**: [https://x.com/sir_tebz](https://x.com/sir_tebz)
+- **Instagram**: [https://instagram.com/sir_tebz](https://instagram.com/sir_tebz)
 
 ---
 © 2026 OmniTech. All rights reserved.

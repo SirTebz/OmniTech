@@ -16,7 +16,12 @@ import {
   Terminal,
   Mail,
 } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/social-icons";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  InstagramIcon,
+} from "@/components/ui/social-icons";
 
 export const metadata: Metadata = {
   title: "About OmniTech & Professional Background",
@@ -177,6 +182,45 @@ export default function AboutPage() {
             >
               <Mail className="w-3.5 h-3.5 text-blue-400" />
               <span>{siteConfig.email}</span>
+            </a>
+          </div>
+
+          <div className="flex items-center justify-center gap-2 pt-2">
+            <a
+              href={siteConfig.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+              className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
+            >
+              <GithubIcon className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={siteConfig.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
+            >
+              <LinkedinIcon className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={siteConfig.social.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter/X Profile"
+              className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
+            >
+              <TwitterIcon className="w-3.5 h-3.5" />
+            </a>
+            <a
+              href={siteConfig.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram Profile"
+              className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
+            >
+              <InstagramIcon className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
