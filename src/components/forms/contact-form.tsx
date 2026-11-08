@@ -166,7 +166,7 @@ export function ContactForm() {
                 aria-label="Twitter/X Profile"
               >
                 <TwitterIcon className="w-3.5 h-3.5" />
-                <span>Twitter / X</span>
+                <span>X</span>
               </a>
               <a
                 href={siteConfig.social.instagram}
